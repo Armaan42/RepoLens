@@ -34,45 +34,67 @@ These observations indicated the need for a more advanced system capable of prov
 
 ## Tech Stack
 
-### Frontend
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- shadcn/ui components
+### Frontend & UI
+- **Framework**: Next.js 16, React 19
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Components**: shadcn/ui, Radix UI
+- **Forms & Validation**: React Hook Form, Zod
+- **Data Visualization**: Recharts
 
-### Backend
-- Next.js API Routes
-- Node.js runtime
-- Server Actions
+### Backend & Data
+- **Backend Architecture**: Next.js API Routes, Server Actions
+- **Primary Database**: PostgreSQL with Prisma ORM
+- **Vector Database (RAG)**: Pinecone
+- **Data Fetching**: TanStack Query (React Query)
+- **Background Jobs**: Inngest
 
-### Databases
-- PostgreSQL (primary database)
-- Pinecone (vector database for embeddings)
+### AI, Integration & Identity
+- **AI/ML**: Google Gemini AI (Gemini 2.5 Flash, text-embedding-004)
+- **Integrations**: GitHub API (Octokit)
+- **Authentication**: Better Auth
+- **Payments & Subscriptions**: Polar
 
-### AI and Machine Learning
-- Google Gemini AI
-- Text embedding models for semantic search
-- Retrieval-Augmented Generation (RAG)
+## Key Features
 
-### Integration and Infrastructure
-- GitHub API (Octokit)
-- Background job processing with Inngest
-- Authentication with Better Auth
+1. **AI-Powered Code Reviews**
+   - Automatic PR review generation using Google Gemini AI.
+   - Context-aware reviews utilizing RAG with the Pinecone vector database.
+   - Comprehensive reviews encompassing a walkthrough, sequence diagrams, summary, strengths, issue detection, improvement suggestions, and even creative poems.
 
-### Architecture & Workflow
+2. **GitHub Integration**
+   - Connect and manage multiple repositories seamlessly.
+   - Automatic webhook handling for PR events (open/update).
+   - Real-time review generation and direct comment posting to GitHub PRs.
 
-Here is how the components of the tech stack integrate with one another to deliver context-aware code reviews:
+3. **RAG Implementation**
+   - Automatic codebase indexing with vector embeddings.
+   - Semantic search across the entire codebase for enhanced context retrieval.
 
-1.  **Authentication & Repository Access**: Users log into the Next.js frontend using **Better Auth**, which handles OAuth with GitHub. Using the **GitHub API (Octokit)**, the platform authenticates and gains access to the user's repositories and pull requests.
-2.  **Webhooks & Event Streaming**: When a new Pull Request is opened or updated on GitHub, a webhook triggers a Next.js API Route.
-3.  **Background Processing**: The API Route offloads the heavy lifting to **Inngest**, which manages the background jobs for processing the pull request asynchronously, ensuring the UI remains responsive.
-4.  **Fetching & Chunking Code**: The worker job fetches the PR diff and context files from GitHub. The codebase is broken down into semantic chunks.
-5.  **Vector Embedding & Storage**: Text embedding models convert these code chunks into vector representations, which are securely stored in **Pinecone** (the vector database).
-6.  **Retrieval-Augmented Generation (RAG)**: When analyzing a specific code change, the system queries Pinecone to retrieve relevant, related code snippets from across the entire repository (not just the files changed in the PR).
-7.  **AI Analysis**: The PR diff, along with the retrieved repository context from Pinecone, is sent as a complex prompt to the **Google Gemini AI** model.
-8.  **Feedback Delivery**: Gemini generates structural feedback, issue detection, and improvement suggestions. This data is saved to the **PostgreSQL** database (via Prisma or a similar ORM).
-9.  **User Interface**: Finally, the **Next.js** frontend (styled with **Tailwind CSS** and **shadcn/ui**) fetches the review results from the database using server actions and presents a clean, interactive dashboard to the developer.
+4. **Dashboard & Analytics**
+   - Real-time statistics tracking total repos, commits, PRs, and reviews.
+   - GitHub contribution graph visualization.
+   - Monthly activity breakdown and beautiful data visualization using Recharts.
+
+5. **Review & Repository Management**
+   - Complete review history with status tracking (completed, pending, failed) and direct PR links.
+   - Browse, search, filter, and connect/disconnect GitHub repositories with infinite scroll pagination.
+
+6. **Subscription & User Management**
+   - **Free tier**: 5 repositories, 5 reviews per repo.
+   - **Pro tier**: Unlimited repositories and reviews via Polar integration.
+   - Complete profile settings, usage tracking, and secure authentication via Better Auth.
+
+## Architecture & Workflow
+
+Here is a simplified breakdown of how RepoLens works behind the scenes:
+
+1. **Onboarding & Connection**: A user signs in (Better Auth) and connects their GitHub account. The system fetches their repositories using the GitHub API (Octokit).
+2. **Indexing the Codebase**: Once a repository is connected, an asynchronous background job (Inngest) reads the code, generates vector embeddings using Gemini (text-embedding-004), and stores them in Pinecone (the Vector database).
+3. **Listening for Changes**: RepoLens sets up webhooks on the connected GitHub repositories. Whenever a user opens or updates a Pull Request, GitHub alerts the RepoLens backend.
+4. **Context Gathering (RAG)**: The system takes the new PR code and queries Pinecone to find the most relevant, related code clusters from the *entire* repository to understand the broader impact.
+5. **AI Review Generation**: The PR changes, plus the retrieved repository context, are sent to Google Gemini 2.5 Flash. Gemini returns a highly detailed, structured review (including Sequence Diagrams and suggestions).
+6. **Delivering the Review**: The Inngest background job posts the AI-generated review directly as a comment securely on the GitHub PR and saves a copy to the PostgreSQL database for dashboard history.
 
 ## Expected Outcomes
 
