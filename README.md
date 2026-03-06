@@ -85,9 +85,9 @@ These observations indicated the need for a more advanced system capable of prov
 ### Integration and Infrastructure
 - GitHub API (Octokit)
 - Background job processing with Inngest
-### Authentication with Better Auth
+- Authentication with Better Auth
 
-### Technology Integration
+## Technology Integration
 
 - The frontend of the system will be developed using Next.js and React, providing an interactive dashboard for repository management and review visualization.
 - The backend will use Next.js API routes and Node.js to handle server-side logic, webhook processing, and communication with external services.
