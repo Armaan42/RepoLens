@@ -2,41 +2,41 @@
 
 ## Project Overview
 
-The proposed project aims to develop an AI-powered platform that automatically reviews pull requests in software repositories and provides intelligent feedback to developers.
+- The proposed project aims to develop an AI-powered platform that automatically reviews pull requests in software repositories and provides intelligent feedback to developers.
 
-The system integrates Retrieval-Augmented Generation (RAG) and generative AI models to analyze code changes while considering the context of the entire repository.
+- The system integrates Retrieval-Augmented Generation (RAG) and generative AI models to analyze code changes while considering the context of the entire repository.
 
-This project falls under the domain of Artificial Intelligence, Cloud-based Software Engineering, and DevOps Automation.
+- This project falls under the domain of Artificial Intelligence, Cloud-based Software Engineering, and DevOps Automation.
 
-With the rapid growth of collaborative development on platforms such as GitHub, efficient code review has become essential for maintaining code quality and security.
+- With the rapid growth of collaborative development on platforms such as GitHub, efficient code review has become essential for maintaining code quality and security.
 
-The platform will assist developers, engineering teams, and organizations by providing automated, context-aware code review suggestions during the development lifecycle.
+- The platform will assist developers, engineering teams, and organizations by providing automated, context-aware code review suggestions during the development lifecycle.
 
 ## Problem Statement
 
-Modern software development relies heavily on collaborative workflows where developers submit pull requests for integrating code changes.
+- Modern software development relies heavily on collaborative workflows where developers submit pull requests for integrating code changes.
 
-Manual code reviews are time-consuming, inconsistent, and highly dependent on the availability of experienced engineers.
+- Manual code reviews are time-consuming, inconsistent, and highly dependent on the availability of experienced engineers.
 
-As software repositories grow larger and more complex, reviewers often lack full visibility of the entire codebase, leading to missed architectural inconsistencies, hidden bugs, and potential security vulnerabilities.
+- As software repositories grow larger and more complex, reviewers often lack full visibility of the entire codebase, leading to missed architectural inconsistencies, hidden bugs, and potential security vulnerabilities.
 
-Existing automated code review tools typically analyze only the modified files within a pull request, without understanding the broader repository context.
+- Existing automated code review tools typically analyze only the modified files within a pull request, without understanding the broader repository context.
 
-This limitation results in shallow or incomplete feedback that may not accurately reflect the impact of the code changes. Consequently, development teams experience delays, reduced productivity, and inconsistent code quality.
+- This limitation results in shallow or incomplete feedback that may not accurately reflect the impact of the code changes. Consequently, development teams experience delays, reduced productivity, and inconsistent code quality.
 
-Therefore, there is a need for a scalable, intelligent system that can analyze pull requests with full repository context and generate structured, automated code reviews using advanced AI techniques.
+- Therefore, there is a need for a scalable, intelligent system that can analyze pull requests with full repository context and generate structured, automated code reviews using advanced AI techniques.
 
 ## How the Problem Was Identified
 
-The problem was identified through observation of common challenges faced by developers during collaborative software development.
+- The problem was identified through observation of common challenges faced by developers during collaborative software development.
 
-In many teams, pull requests remain open for long periods due to delays in manual code reviews. Developers often depend on senior engineers for review feedback, creating bottlenecks in the development workflow.
+- In many teams, pull requests remain open for long periods due to delays in manual code reviews. Developers often depend on senior engineers for review feedback, creating bottlenecks in the development workflow.
 
-Further investigation revealed that existing automated tools provide limited contextual analysis because they evaluate only the changed files rather than the entire repository.
+- Further investigation revealed that existing automated tools provide limited contextual analysis because they evaluate only the changed files rather than the entire repository.
 
-Discussions within developer communities, technical blogs, and open-source forums also highlight the growing demand for intelligent developer tools that can assist with automated code analysis and review.
+- Discussions within developer communities, technical blogs, and open-source forums also highlight the growing demand for intelligent developer tools that can assist with automated code analysis and review.
 
-These observations indicated the need for a more advanced system capable of providing context-aware insights during the code review process.
+- These observations indicated the need for a more advanced system capable of providing context-aware insights during the code review process.
 
 ## Objectives
 
