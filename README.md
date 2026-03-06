@@ -48,16 +48,11 @@ These observations indicated the need for a more advanced system capable of prov
 
 ## Proposed Solution
 
-- Develop a web-based platform that integrates with repositories hosted on GitHub.
-- Monitor pull request activities using GitHub webhooks to detect when new code changes are submitted.
-- Automatically retrieve the modified code and pull request information for analysis.
-- Index the entire repository by splitting source files into smaller code segments and converting them into vector embeddings.
-- Store the generated embeddings in a vector database to enable semantic search across the repository.
-- When a pull request is created, retrieve relevant code context from the repository using similarity search techniques.
-- Combine the retrieved code context with the pull request changes and send it to a generative AI model for analysis.
-- Use the AI model to generate a structured code review containing summaries, potential issues, improvement suggestions, and explanations.
-- Store the generated review results in a database and display them in the platform dashboard.
-- Optionally post the AI-generated review as comments directly on the pull request for developer visibility.
+- **Platform & Integration**: Develop a web-based dashboard that connects to GitHub repositories and uses webhooks to automatically monitor and retrieve new code changes when pull requests are submitted.
+- **Contextual Indexing**: Systematically index connected repositories by chunking source code and converting it into vector embeddings stored in a vector database (Pinecone) for semantic search.
+- **RAG-Powered Retrieval**: Upon a new pull request, perform similarity search techniques against the vector database to retrieve the most relevant, repository-wide context related to the modified code.
+- **AI-Driven Analysis**: Combine the pull request changes with the retrieved, broader repository context and process it through a generative AI model to produce comprehensive, structured code reviews (summaries, issues, suggestions).
+- **Feedback & Visibility**: Store all generated reviews in the primary database for dashboard analytics, and optionally post the AI feedback directly as comments on the GitHub pull request for immediate developer visibility.
 
 ## Tech Stack
 
