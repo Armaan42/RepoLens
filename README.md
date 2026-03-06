@@ -68,9 +68,12 @@ Key outcomes include:
 Software development teams increasingly rely on automated tools to maintain code quality and improve productivity. Several platforms currently provide AI-assisted coding and review features.
 
 For example:
-- **GitHub Copilot**: Assists developers in writing code but provides limited automated review functionality.
-- **Amazon CodeGuru**: Focuses mainly on performance and security analysis but lacks deep contextual repository understanding.
-- **Snyk**: Provides vulnerability scanning but does not provide comprehensive architecture-aware review feedback.
+
+| Platform | Primary Focus | Limitations Regarding Context-Aware Review |
+|:---|:---|:---|
+| **GitHub Copilot** | Assists developers in writing code | Provides limited automated review functionality. |
+| **Amazon CodeGuru** | Focuses mainly on performance and security analysis | Lacks deep contextual repository understanding. |
+| **Snyk** | Provides vulnerability scanning | Does not provide comprehensive architecture-aware review feedback. |
 
 While these tools provide valuable assistance, most existing systems focus on individual code snippets or security scanning rather than holistic repository-level review. This creates a gap for a solution that combines semantic repository understanding, automated pull request review, and AI-generated insights in a unified platform.
 
