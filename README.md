@@ -85,7 +85,18 @@ These observations indicated the need for a more advanced system capable of prov
 ### Integration and Infrastructure
 - GitHub API (Octokit)
 - Background job processing with Inngest
-- Authentication with Better Auth
+### Authentication with Better Auth
+
+### Technology Integration
+
+- The frontend of the system will be developed using Next.js and React, providing an interactive dashboard for repository management and review visualization.
+- The backend will use Next.js API routes and Node.js to handle server-side logic, webhook processing, and communication with external services.
+- PostgreSQL with Prisma ORM will manage application data such as users, repositories, and generated reviews.
+- A Pinecone vector database will store code embeddings to enable semantic search and retrieval of relevant repository context.
+- Google Gemini AI will analyze the pull request changes along with retrieved repository context to generate structured review feedback.
+- GitHub APIs and webhooks will enable real-time integration with repositories and automated pull request monitoring.
+- Background processing using Inngest will handle asynchronous tasks such as repository indexing and AI review generation.
+- Together, these technologies will work in an integrated architecture to provide a scalable, automated, and context-aware code review system.
 
 ## Expected Outcomes
 
