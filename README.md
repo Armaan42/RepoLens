@@ -26,6 +26,18 @@ This limitation results in shallow or incomplete feedback that may not accuratel
 
 Therefore, there is a need for a scalable, intelligent system that can analyze pull requests with full repository context and generate structured, automated code reviews using advanced AI techniques.
 
+## How the Problem Was Identified
+
+The problem was identified through observation of common challenges faced by developers during collaborative software development.
+
+In many teams, pull requests remain open for long periods due to delays in manual code reviews. Developers often depend on senior engineers for review feedback, creating bottlenecks in the development workflow.
+
+Further investigation revealed that existing automated tools provide limited contextual analysis because they evaluate only the changed files rather than the entire repository.
+
+Discussions within developer communities, technical blogs, and open-source forums also highlight the growing demand for intelligent developer tools that can assist with automated code analysis and review.
+
+These observations indicated the need for a more advanced system capable of providing context-aware insights during the code review process.
+
 ## Objectives
 
 - Design a web-based platform that integrates with GitHub repositories to automatically monitor and analyze pull requests.
@@ -86,17 +98,6 @@ While these tools provide valuable assistance, most existing systems focus on in
 
 This creates a gap for a solution that combines semantic repository understanding, automated pull request review, and AI-generated insights in a unified platform.
 
-## How the Problem Was Identified
-
-The problem was identified through observation of common challenges faced by developers during collaborative software development.
-
-In many teams, pull requests remain open for long periods due to delays in manual code reviews. Developers often depend on senior engineers for review feedback, creating bottlenecks in the development workflow.
-
-Further investigation revealed that existing automated tools provide limited contextual analysis because they evaluate only the changed files rather than the entire repository.
-
-Discussions within developer communities, technical blogs, and open-source forums also highlight the growing demand for intelligent developer tools that can assist with automated code analysis and review.
-
-These observations indicated the need for a more advanced system capable of providing context-aware insights during the code review process.
 
 ## Research Work
 
