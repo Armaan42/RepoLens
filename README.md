@@ -46,6 +46,19 @@ These observations indicated the need for a more advanced system capable of prov
 - Build a repository indexing and semantic search mechanism using vector embeddings to enable contextual understanding of the codebase.
 - Evaluate the effectiveness of the system in improving code review efficiency and supporting development teams.
 
+## Proposed Solution
+
+- Develop a web-based platform that integrates with repositories hosted on GitHub.
+- Monitor pull request activities using GitHub webhooks to detect when new code changes are submitted.
+- Automatically retrieve the modified code and pull request information for analysis.
+- Index the entire repository by splitting source files into smaller code segments and converting them into vector embeddings.
+- Store the generated embeddings in a vector database to enable semantic search across the repository.
+- When a pull request is created, retrieve relevant code context from the repository using similarity search techniques.
+- Combine the retrieved code context with the pull request changes and send it to a generative AI model for analysis.
+- Use the AI model to generate a structured code review containing summaries, potential issues, improvement suggestions, and explanations.
+- Store the generated review results in a database and display them in the platform dashboard.
+- Optionally post the AI-generated review as comments directly on the pull request for developer visibility.
+
 ## Tech Stack
 
 ### Frontend
@@ -101,6 +114,41 @@ While these tools provide valuable assistance, most existing systems focus on in
 
 This creates a gap for a solution that combines semantic repository understanding, automated pull request review, and AI-generated insights in a unified platform.
 
+
+## V.E.T.S Justification
+
+### V – Viability
+- The project is feasible within the available time frame and development resources.
+- The system will use publicly available APIs such as the GitHub API for repository integration and pull request monitoring.
+- Cloud-based AI services and embedding models will be used, eliminating the need to train large models from scratch.
+- Vector databases such as Pinecone are available for efficient semantic search and repository indexing.
+- The development tools required (Next.js, Node.js, PostgreSQL, AI APIs) are widely accessible and well documented.
+- The development team possesses the required technical skills in full-stack development, API integration, and AI-based system design.
+
+### E – Engineering Depth
+- Design and implementation of a Retrieval-Augmented Generation (RAG) pipeline for context-aware code analysis.
+- Development of a repository indexing system using vector embeddings and semantic search.
+- Integration with GitHub using webhooks and API-based pull request monitoring.
+- Implementation of generative AI models to generate structured code review feedback.
+- Development of a background job processing system for asynchronous review generation.
+- System integration involving multiple components such as web frameworks, AI services, vector databases, and relational databases.
+- Creation of a dashboard for analytics, review history, and repository management.
+
+### T – Trend Alignment
+- Aligns with the growing adoption of Artificial Intelligence in software development tools.
+- Utilizes Generative AI models for automated code understanding and review generation.
+- Implements Retrieval-Augmented Generation (RAG), a modern AI architecture used in advanced AI applications.
+- Supports DevOps automation by integrating intelligent code review into development workflows.
+- Uses cloud-native technologies and APIs, which are widely used in modern software systems.
+- Contributes to the emerging field of AI-assisted developer productivity tools.
+
+### S – Social / Industrial Impact
+- Helps developers and software teams reduce the time required for manual code reviews.
+- Improves code quality and reliability by detecting issues earlier in the development process.
+- Reduces dependency on senior engineers for routine review tasks.
+- Encourages standardized coding practices across development teams.
+- Enhances productivity and efficiency in software development environments.
+- Supports the digital transformation of software engineering workflows through intelligent automation.
 
 ## Research Work
 
