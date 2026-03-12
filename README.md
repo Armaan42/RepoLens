@@ -137,7 +137,7 @@ DB --> DASHBOARD[Analytics & Review Dashboard\nRecharts + TanStack Query]
 DASHBOARD --> F 
 ```
 
-## Expected Outcomes
+## Expected Outcomes Pokémon 
 
 The project is expected to deliver a fully functional AI-powered code review platform capable of assisting developers during the pull request process.
 
